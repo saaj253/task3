@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Document Editor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>📝 Document Editor</h1>
+            </div>
+            <div class="header-right">
+                <span id="user-name" class="user-badge">User</span>
+                <button id="logout-btn" class="btn-logout">Logout</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3>📄 Documents</h3>
+                    <button id="new-doc-btn" class="btn-primary">+ New Document</button>
+                    <ul id="doc-list" class="document-list">
+                        <li class="doc-item active">Document 1</li>
+                        <li class="doc-item">Document 2</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>👥 Active Users</h3>
+                    <ul id="user-list" class="user-list">
+                        <li class="user-online">You (Online)</li>
+                        <li class="user-online">John (Online)</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Editor Area -->
+            <section class="editor-area">
+                <div class="editor-header">
+                    <input type="text" id="doc-title" class="doc-title-input" placeholder="Document Title" value="Untitled Document">
+                    <div class="editor-tools">
+                        <button class="tool-btn" title="Bold"><strong>B</strong></button>
+                        <button class="tool-btn" title="Italic"><em>I</em></button>
+                        <button class="tool-btn" title="Underline"><u>U</u></button>
+                        <div class="divider"></div>
+                        <button class="tool-btn" title="Save">💾 Save</button>
+                        <button class="tool-btn" title="Share">🔗 Share</button>
+                    </div>
+                </div>
+
+                <div class="editor-status">
+                    <span id="status">Ready</span>
+                    <span id="word-count">Words: 0</span>
+                    <span id="char-count">Characters: 0</span>
+                </div>
+
+                <textarea id="editor" class="editor-textarea" placeholder="Start typing..."></textarea>
+
+                <div class="editor-footer">
+                    <span id="last-saved">Last saved: Just now</span>
+                </div>
+            </section>
+
+            <!-- Collaborators Panel -->
+            <aside class="collaborators-panel">
+                <h3>✨ Collaborators</h3>
+                <div id="collaborators-list" class="collaborators-list">
+                    <div class="collaborator-item">
+                        <div class="avatar">JD</div>
+                        <div>
+                            <p class="collab-name">John Doe</p>
+                            <p class="collab-status">Editing...</p>
+                        </div>
+                    </div>
+                    <div class="collaborator-item">
+                        <div class="avatar">SM</div>
+                        <div>
+                            <p class="collab-name">Sarah Miller</p>
+                            <p class="collab-status">Viewing...</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <!-- Login Modal (for demo) -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <h2>Login</h2>
+            <input type="email" id="email-input" placeholder="Email" class="input-field">
+            <input type="password" id="password-input" placeholder="Password" class="input-field">
+            <button id="login-btn" class="btn-primary">Login</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
